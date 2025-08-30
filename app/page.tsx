@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import {
   Star,
   Leaf,
@@ -15,20 +15,20 @@ import {
   Menu,
   X,
   ExternalLink,
-} from "lucide-react"
-import { useState, useEffect } from "react"
+} from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function HomePage() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const products = [
     {
@@ -73,39 +73,70 @@ export default function HomePage() {
       description: "Selección de hierbas con propiedades curativas",
       badge: "Medicinal",
     },
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-background">
       <header
-        className={`transition-all duration-300 ${isScrolled ? "navbar-fixed" : "bg-gradient-to-b from-muted to-background border-b border-border"}`}
+        className={`transition-all duration-300 ${
+          isScrolled
+            ? "navbar-fixed"
+            : "bg-gradient-to-b from-muted to-background border-b border-border"
+        }`}
       >
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <img src="/images/sembrarte-logo.png" alt="Sembrarte Logo" className="h-12 w-auto" />
+              <img
+                src="/images/sembrarte-logo.png"
+                alt="Sembrarte Logo"
+                className="h-12 w-auto"
+              />
             </div>
 
             <nav className="hidden md:flex items-center gap-8">
-              <a href="#inicio" className="text-foreground hover:text-primary transition-colors font-medium">
+              <a
+                href="#inicio"
+                className="text-foreground hover:text-primary transition-colors font-medium"
+              >
                 Inicio
               </a>
-              <a href="#productos" className="text-foreground hover:text-primary transition-colors font-medium">
+              <a
+                href="#productos"
+                className="text-foreground hover:text-primary transition-colors font-medium"
+              >
                 Productos
               </a>
-              <a href="#nosotros" className="text-foreground hover:text-primary transition-colors font-medium">
+              <a
+                href="#nosotros"
+                className="text-foreground hover:text-primary transition-colors font-medium"
+              >
                 Nosotros
               </a>
-              <a href="#testimonios" className="text-foreground hover:text-primary transition-colors font-medium">
+              <a
+                href="#testimonios"
+                className="text-foreground hover:text-primary transition-colors font-medium"
+              >
                 Testimonios
               </a>
-              <a href="#contacto" className="text-foreground hover:text-primary transition-colors font-medium">
+              <a
+                href="#contacto"
+                className="text-foreground hover:text-primary transition-colors font-medium"
+              >
                 Contacto
               </a>
             </nav>
 
             <div className="flex items-center gap-4">
-              <Button className="bg-secondary text-secondary-foreground hover:bg-secondary/90 hidden sm:flex">
+              <Button
+                className="bg-secondary text-secondary-foreground hover:bg-secondary/90 hidden sm:flex"
+                onClick={() =>
+                  window.open(
+                    "https://wa.me/573002675188?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20productos%20de%20té%20natural",
+                    "_blank"
+                  )
+                }
+              >
                 <ShoppingCart className="w-4 h-4 mr-2" />
                 Tienda
               </Button>
@@ -116,7 +147,11 @@ export default function HomePage() {
                 className="md:hidden"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               >
-                {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                {isMobileMenuOpen ? (
+                  <X className="w-5 h-5" />
+                ) : (
+                  <Menu className="w-5 h-5" />
+                )}
               </Button>
             </div>
           </div>
@@ -159,7 +194,15 @@ export default function HomePage() {
                 >
                   Contacto
                 </a>
-                <Button className="bg-secondary text-secondary-foreground hover:bg-secondary/90 w-fit">
+                <Button
+                  className="bg-secondary text-secondary-foreground hover:bg-secondary/90 w-fit"
+                  onClick={() =>
+                    window.open(
+                      "https://wa.me/573002675188?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20productos%20de%20té%20natural",
+                      "_blank"
+                    )
+                  }
+                >
                   <ShoppingCart className="w-4 h-4 mr-2" />
                   Tienda
                 </Button>
@@ -170,7 +213,7 @@ export default function HomePage() {
       </header>
 
       <a
-        href="https://wa.me/5255123456789?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20productos%20de%20té%20natural"
+        href="https://wa.me/573002675188?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20productos%20de%20té%20natural"
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-float"
@@ -182,7 +225,9 @@ export default function HomePage() {
       {/* Hero Section */}
       <section
         id="inicio"
-        className={`relative py-20 lg:py-32 overflow-hidden ${isScrolled ? "content-with-fixed-navbar" : ""}`}
+        className={`relative py-20 lg:py-32 overflow-hidden ${
+          isScrolled ? "content-with-fixed-navbar" : ""
+        }`}
       >
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -197,8 +242,8 @@ export default function HomePage() {
             <span className="text-secondary">en Cada Taza</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto leading-relaxed opacity-90">
-            Descubre nuestra selección de tés naturales y productos orgánicos, cuidadosamente seleccionados para nutrir
-            tu cuerpo y alma.
+            Descubre nuestra selección de tés naturales y productos orgánicos,
+            cuidadosamente seleccionados para nutrir tu cuerpo y alma.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -227,7 +272,8 @@ export default function HomePage() {
               Nuestros Productos Destacados
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Cada producto es seleccionado con amor y cuidado, garantizando la máxima calidad y frescura natural.
+              Cada producto es seleccionado con amor y cuidado, garantizando la
+              máxima calidad y frescura natural.
             </p>
           </div>
 
@@ -248,10 +294,16 @@ export default function HomePage() {
                   </Badge>
                 </div>
                 <CardContent className="p-6">
-                  <h3 className="font-serif text-xl font-semibold mb-2 text-foreground">{product.name}</h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">{product.description}</p>
+                  <h3 className="font-serif text-xl font-semibold mb-2 text-foreground">
+                    {product.name}
+                  </h3>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    {product.description}
+                  </p>
                   <div className="flex items-center justify-between">
-                    <span className="font-bold text-2xl text-primary">{product.price}</span>
+                    <span className="font-bold text-2xl text-primary">
+                      {product.price}
+                    </span>
                     <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
                       <ShoppingCart className="w-4 h-4 mr-2" />
                       Agregar
@@ -266,10 +318,12 @@ export default function HomePage() {
             <Button
               size="lg"
               className="bg-secondary text-secondary-foreground hover:bg-secondary/90 text-lg px-8 py-4"
-              onClick={() => window.open("https://tienda.sembrarte.com", "_blank")}
+              onClick={() =>
+                window.open("https://tienda.sembrarte.com", "_blank")
+              }
             >
               <ExternalLink className="w-5 h-5 mr-2" />
-              Ver Todos los Productos en Nuestra Tienda
+              Ver nuestra Tienda
             </Button>
             <p className="text-sm text-muted-foreground mt-2">
               Descubre nuestra colección completa y realiza tu pedido
@@ -287,17 +341,22 @@ export default function HomePage() {
                 Nuestra Pasión por lo Natural
               </h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                En Sembrarte, creemos que la naturaleza nos brinda todo lo que necesitamos para vivir una vida plena y
-                saludable. Desde nuestros inicios, nos hemos dedicado a seleccionar los mejores productos orgánicos y
-                naturales.
+                En Sembrarte, creemos que la naturaleza nos brinda todo lo que
+                necesitamos para vivir una vida plena y saludable. Desde
+                nuestros inicios, nos hemos dedicado a seleccionar los mejores
+                productos orgánicos y naturales.
               </p>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Trabajamos directamente con productores locales que comparten nuestra visión de sostenibilidad y respeto
-                por la tierra, garantizando que cada producto llegue a tu hogar con la máxima frescura y calidad.
+                Trabajamos directamente con productores locales que comparten
+                nuestra visión de sostenibilidad y respeto por la tierra,
+                garantizando que cada producto llegue a tu hogar con la máxima
+                frescura y calidad.
               </p>
               <div className="flex items-center gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-1">100%</div>
+                  <div className="text-3xl font-bold text-primary mb-1">
+                    100%
+                  </div>
                   <div className="text-sm text-muted-foreground">Orgánico</div>
                 </div>
                 <div className="text-center">
@@ -305,7 +364,9 @@ export default function HomePage() {
                   <div className="text-sm text-muted-foreground">Años</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-1">1000+</div>
+                  <div className="text-3xl font-bold text-primary mb-1">
+                    1000+
+                  </div>
                   <div className="text-sm text-muted-foreground">Clientes</div>
                 </div>
               </div>
@@ -363,13 +424,22 @@ export default function HomePage() {
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-secondary text-secondary" />
+                      <Star
+                        key={i}
+                        className="w-5 h-5 fill-secondary text-secondary"
+                      />
                     ))}
                   </div>
-                  <p className="text-muted-foreground mb-4 leading-relaxed italic">"{testimonial.text}"</p>
+                  <p className="text-muted-foreground mb-4 leading-relaxed italic">
+                    "{testimonial.text}"
+                  </p>
                   <div>
-                    <div className="font-semibold text-foreground">{testimonial.name}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.location}</div>
+                    <div className="font-semibold text-foreground">
+                      {testimonial.name}
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      {testimonial.location}
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -379,7 +449,10 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer id="contacto" className="bg-primary text-primary-foreground py-16">
+      <footer
+        id="contacto"
+        className="bg-primary text-primary-foreground py-16"
+      >
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
@@ -389,8 +462,8 @@ export default function HomePage() {
                 className="h-12 w-auto mb-4 brightness-0 invert"
               />
               <p className="text-primary-foreground/80 mb-6 leading-relaxed">
-                Cultivando bienestar en cada taza. Productos naturales y orgánicos para una vida más saludable y
-                consciente.
+                Cultivando bienestar en cada taza. Productos naturales y
+                orgánicos para una vida más saludable y consciente.
               </p>
               <div className="flex gap-4">
                 <Button
@@ -418,25 +491,39 @@ export default function HomePage() {
             </div>
 
             <div>
-              <h3 className="font-serif text-xl font-semibold mb-4">Productos</h3>
+              <h3 className="font-serif text-xl font-semibold mb-4">
+                Productos
+              </h3>
               <ul className="space-y-2 text-primary-foreground/80">
                 <li>
-                  <a href="#" className="hover:text-primary-foreground transition-colors">
+                  <a
+                    href="#"
+                    className="hover:text-primary-foreground transition-colors"
+                  >
                     Tés Verdes
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary-foreground transition-colors">
+                  <a
+                    href="#"
+                    className="hover:text-primary-foreground transition-colors"
+                  >
                     Tés Herbales
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary-foreground transition-colors">
+                  <a
+                    href="#"
+                    className="hover:text-primary-foreground transition-colors"
+                  >
                     Hierbas Medicinales
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary-foreground transition-colors">
+                  <a
+                    href="#"
+                    className="hover:text-primary-foreground transition-colors"
+                  >
                     Accesorios
                   </a>
                 </li>
@@ -444,7 +531,9 @@ export default function HomePage() {
             </div>
 
             <div>
-              <h3 className="font-serif text-xl font-semibold mb-4">Contacto</h3>
+              <h3 className="font-serif text-xl font-semibold mb-4">
+                Contacto
+              </h3>
               <div className="space-y-3 text-primary-foreground/80">
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4" />
@@ -468,5 +557,5 @@ export default function HomePage() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
