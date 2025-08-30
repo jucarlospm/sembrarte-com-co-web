@@ -113,12 +113,12 @@ export default function HomePage() {
               >
                 Nosotros
               </a>
-              <a
+              {/* <a
                 href="#testimonios"
                 className="text-foreground hover:text-primary transition-colors font-medium"
               >
                 Testimonios
-              </a>
+              </a> */}
               <a
                 href="#contacto"
                 className="text-foreground hover:text-primary transition-colors font-medium"
@@ -180,13 +180,13 @@ export default function HomePage() {
                 >
                   Nosotros
                 </a>
-                <a
+                {/* <a
                   href="#testimonios"
                   className="text-foreground hover:text-primary transition-colors font-medium"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Testimonios
-                </a>
+                </a> */}
                 <a
                   href="#contacto"
                   className="text-foreground hover:text-primary transition-colors font-medium"
