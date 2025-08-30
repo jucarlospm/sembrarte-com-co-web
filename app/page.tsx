@@ -319,7 +319,10 @@ export default function HomePage() {
               size="lg"
               className="bg-secondary text-secondary-foreground hover:bg-secondary/90 text-lg px-8 py-4"
               onClick={() =>
-                window.open("https://tienda.sembrarte.com", "_blank")
+                window.open(
+                  "https://wa.me/573002675188?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20productos%20de%20té%20natural",
+                  "_blank"
+                )
               }
             >
               <ExternalLink className="w-5 h-5 mr-2" />
@@ -388,7 +391,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section id="testimonios" className="py-20 bg-background">
+      {/* <section id="testimonios" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="font-serif text-3xl md:text-5xl font-bold text-foreground mb-4">
@@ -446,7 +449,7 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Footer */}
       <footer
@@ -470,13 +473,12 @@ export default function HomePage() {
                   variant="outline"
                   size="sm"
                   className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
-                >
-                  Facebook
-                </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
+                  onClick={() =>
+                    window.open(
+                      "https://www.instagram.com/sembrarte.co/",
+                      "_blank"
+                    )
+                  }
                 >
                   Instagram
                 </Button>
@@ -484,6 +486,12 @@ export default function HomePage() {
                   variant="outline"
                   size="sm"
                   className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
+                  onClick={() =>
+                    window.open(
+                      "https://wa.me/573002675188?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20productos%20de%20té%20natural",
+                      "_blank"
+                    )
+                  }
                 >
                   WhatsApp
                 </Button>
@@ -537,22 +545,27 @@ export default function HomePage() {
               <div className="space-y-3 text-primary-foreground/80">
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4" />
-                  <span>hola@sembrarte.com</span>
+                  <span>ventas@sembrarte.com.co</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4" />
-                  <span>+52 55 1234 5678</span>
+                  <span>+57 300 2675 188</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4" />
-                  <span>Ciudad de México</span>
+                  <span>
+                    Cartagena de Indias / Monteria (Envios a todo el pais)
+                  </span>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="border-t border-primary-foreground/20 mt-12 pt-8 text-center text-primary-foreground/60">
-            <p>&copy; 2024 Sembrarte. Todos los derechos reservados.</p>
+            <p>
+              &copy; {new Date().getFullYear()} Sembrarte. Todos los derechos
+              reservados.
+            </p>
           </div>
         </div>
       </footer>
