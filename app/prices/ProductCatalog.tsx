@@ -298,7 +298,7 @@ export default function ProductCatalog({ products }: { products: Product[] }) {
   );
 
   return (
-    <div className=" min-h-screen text-sembrarte-brown pb-32">
+    <div className="bg-sembrarte-cream min-h-screen text-sembrarte-brown pb-32">
       {/* ... (El header y el main no cambian) ... */}
       <header className="bg-white p-4 sticky top-0 z-40 flex items-center justify-center">
         <img
