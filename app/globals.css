@@ -41,6 +41,11 @@
   /* Revirtiendo variables de fuente a Playfair Display e Inter */
   --font-playfair: "Playfair Display", serif;
   --font-inter: "Inter", sans-serif;
+  /* Colores Sembrarte - tema claro */
+  --sembrarte-green: #6a994e;
+  --sembrarte-light-green: #a7c957;
+  --sembrarte-brown: #4f4032;
+  --sembrarte-cream: #f2e8cf;
 }
 
 .dark {
@@ -76,6 +81,11 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: oklch(0.439 0 0);
+  /* Colores Sembrarte - tema oscuro */
+  --sembrarte-green: #4d6b37;
+  --sembrarte-light-green: #7ea544;
+  --sembrarte-brown: #2f251d;
+  --sembrarte-cream: #e6dcc4;
 }
 
 @theme inline {
@@ -119,6 +129,10 @@
   --font-serif: var(--font-playfair);
   --font-sans: var(--font-inter);
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --color-sembrarte-green: var(--sembrarte-green);
+  --color-sembrarte-light-green: var(--sembrarte-light-green);
+  --color-sembrarte-brown: var(--sembrarte-brown);
+  --color-sembrarte-cream: var(--sembrarte-cream);
 }
 
 @layer base {
